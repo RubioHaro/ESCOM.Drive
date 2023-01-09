@@ -4,6 +4,7 @@ import Login from './components/login';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Error from './components/error/error';
 import Home from './components/home/home';
+import HomeUpload from './components/home/upload/upload';
 
 function App() {
   return (
@@ -13,16 +14,23 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" >
-              <Route index element={<Login />} />
-              <Route path="login" element={<Login />} />
-              <Route path="home" element={<Home />} />
+              {/* <Route index element={<Login />} /> */}
+              <Route path="login" element={
+                <Login />
+              } />
+              <Route path="home" element={
+                < Home />
+              } />
+              <Route path="upload" element={
+                < HomeUpload />
+              } />
               <Route path="error" element={<Error />} />
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>
         </BrowserRouter>
-
       </header>
+
     </div>
   );
 }

@@ -63,7 +63,7 @@ body > main {
   }
   
   /* Hero Image */
-  article div:nth-of-type(2) {
+  .hero {
     display: none;
     background-color: #374956;
     background-image: url("../assets/3.jpg");

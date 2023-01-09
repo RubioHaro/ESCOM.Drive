@@ -36,7 +36,7 @@ function Login() {
                             <button type="submit" className="contrast" onClick={handleLogin}>Login</button>
                         </form>
                     </div>
-                    <div></div>
+                    <div className='hero'></div>
                 </article>
             </main>
 
