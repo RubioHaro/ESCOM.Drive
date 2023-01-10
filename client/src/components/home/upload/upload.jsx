@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import download from 'downloadjs';
+import { Link } from 'react-router-dom';
 
 function HomeUpload() {
 
@@ -68,6 +69,11 @@ function HomeUpload() {
                             <button type="submit" className="contrast">Subir</button>
                         }
                     </form>
+                    <Link to="/home">
+                        <button>
+                        Ver archivos
+                        </button>
+                    </Link>
                 </div>
             </article>
         </div>

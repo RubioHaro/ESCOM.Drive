@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import download from 'downloadjs';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -162,10 +163,18 @@ function Home() {
     return (
         <div className=" ">
             <article style={{ width: '100%' }}>
-                <br/>
-                <h1>ESCOM.Drive</h1>
-                <h4> Archivos Recientes: </h4>
-                {renderDocs(documentos)}
+                <div>
+
+                    <br />
+                    <h1>ESCOM.Drive</h1>
+                    <h4> Archivos Recientes: </h4>
+                    {renderDocs(documentos)}
+                    <Link to="/upload">
+                        <button>
+                            Cargar documento
+                        </button>
+                    </Link>
+                </div>
             </article>
         </div>
     );
