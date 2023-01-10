@@ -13,20 +13,20 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route path="/" >
+            <Route path="/" element={<Login></Login>} >
               {/* <Route index element={<Login />} /> */}
-              <Route path="login" element={
-                <Login />
-              } />
-              <Route path="home" element={
-                < Home />
-              } />
-              <Route path="upload" element={
-                < HomeUpload />
-              } />
-              <Route path="error" element={<Error />} />
-              <Route path="*" element={<Error />} />
             </Route>
+            <Route path="login" element={
+              <Login />
+            } />
+            <Route path="home" element={
+              < Home />
+            } />
+            <Route path="upload" element={
+              < HomeUpload />
+            } />
+            <Route path="error" element={<Error />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </BrowserRouter>
       </header>
