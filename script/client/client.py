@@ -72,10 +72,10 @@ def main():
             print("\t|-", file)
 
         print("\nCreating clients...")
-        for file in config_files:
-            print("Creating for: ", file)
+        for file_config in config_files:
+            print("Creating for: ", file_config)
             ## create a client per file
-            client_model =  start_client(manager_config_folder + "/" + "config.txt")
+            client_model =  start_client(manager_config_folder + "/" + file_config)
             
             files = ana_dir(client_model.dir)
             first = True
