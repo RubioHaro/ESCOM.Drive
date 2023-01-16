@@ -51,9 +51,27 @@ def handle_client(conn, addr, n_client):
         # arreglo de archivos 
         files = os.listdir(n_dir)
 
+
         # Se recibe el nombre del archivo
         msgR = conn.recv(SIZE).decode(FORMAT)
         print(f"[{addr}] {msgR}")
+
+    
+         # Se valida si es solicitud de estado
+        if(msgR == "PING"):
+            print("PING request, sending PONG")
+            # Se envia la lista de archivos
+            msgS = str("PONG")
+            conn.send(msgS.encode(FORMAT))
+            continue
+
+        # Se valida si es solicitud de archivos
+        if(msgR == "REQ"):
+            print("Requesting files")
+            # Se envia la lista de archivos
+            msgS = str(files)
+            conn.send(msgS.encode(FORMAT))
+            continue
 
         if(msgR in files):
             print("File already exists")
