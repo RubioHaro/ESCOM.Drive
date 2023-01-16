@@ -1,2 +1,2 @@
 8080
-~/server_files/
+/home/rodrigo_rubio/server_files
