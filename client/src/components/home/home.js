@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Home() {
     const [documentos, setDocumentos] = useState([]);
-
+    const host = 'http://localhost:5000';
     const actualizarLista = () => {
-        fetch(`http://localhost:5000/`)
+        fetch(`${host}/`)
             .then(res =>
                 res.json()
             )
@@ -98,7 +98,7 @@ function Home() {
                                     <td>
                                         <button type="button" onClick={(e) => {
                                             e.preventDefault();
-                                            fetch(`http://localhost:5000/download/${doc.id}`, {
+                                            fetch(`${host}/download/${doc.id}`, {
                                                 method: 'GET',
                                             }).then(res => res.blob())
                                                 .then(blob => {

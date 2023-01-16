@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import download from 'downloadjs';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function HomeUpload() {
@@ -10,13 +9,7 @@ function HomeUpload() {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    const [documentos, setDocumentos] = useState([]);
-    const [docExtension, set_map_doc] = useState([]);
-    const [seleccion, setSeleccion] = useState({
-        id: '',
-        nombreArchivo: '',
-    });
-
+    const host = 'http://localhost:5000';
 
     const fileChangeHandler = (e) => {
         setFileData(e.target.files[0])
@@ -30,7 +23,7 @@ function HomeUpload() {
         if (fileData !== undefined) {
             const data = new FormData()
             data.append('image', fileData)
-            fetch('http://localhost:5000/upload', {
+            fetch(`${host}/upload`, {
                 method: 'POST',
                 body: data,
             }).then(() => {
@@ -61,6 +54,9 @@ function HomeUpload() {
                         <input type="file" name="file" id="file" onChange={fileChangeHandler} className="inputfile" />
                         {showSuccess &&
                             <p className="success">{success}</p>
+                        }
+                        {showError &&
+                            <p className="error">{error}</p>
                         }
                         {loading &&
                             <button aria-busy="true">Subiendo Archivo…</button>
