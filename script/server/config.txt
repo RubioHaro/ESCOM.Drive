@@ -1,2 +1,2 @@
 8080
-/home/roy/Desktop/dev/ESCOM.Drive/script/server/upload
+~/server_files/
